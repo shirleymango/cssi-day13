@@ -81,15 +81,15 @@ const closeEditModal = () => {
     editNoteModal.classList.remove('is-active');
 }; 
 
-const saveEditModal = (noteId) => {
+const saveEditedNote = () => {
     console.log("Save changes");
-    const editNoteTitleInput = document.querySelector("#editTileInput");
+    const editNoteTitleInput = document.querySelector("#editTitleInput");
     const editNoteTextInput = document.querySelector("#editTextInput");
-    const editNoteIdInput = documeent.querySelector("editNoteId");
+    const editNoteIdInput = document.querySelector("#editNoteId");
 
     const title = editNoteTitleInput.value;
     const text = editNoteTextInput.value;
-    const noteIde = editNoteIdInput.value;
+    const noteId = editNoteIdInput.value;
 
     firebase.database().ref(`users/${googleUserId}/${noteId}`).update({
         title: title,
